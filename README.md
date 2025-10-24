@@ -78,6 +78,8 @@ Insert a single, reversible debug log in the controller method that handles user
 
 This POC is intentionally non-executable and intended only to let developers confirm whether any raw SQL assembly exists.
 
+---
+
 ## Detection & Test Guidance (safe)
 
 - Static grep/scan: search repository for ->query(, sprintf(, str_replace( used to build SQL, or occurrences of $_POST / $this->input->post adjacent to string concatenation operators (.).
@@ -85,6 +87,8 @@ This POC is intentionally non-executable and intended only to let developers con
 - Add linting rules or CI jobs that flag suspicious concatenation into DB calls.
 
 - Run authorized, non-destructive tests only in staging.
+
+---
 
 ## Remediation — secure patterns (examples)
 
